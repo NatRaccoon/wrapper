@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <style>
@@ -18,4 +18,31 @@
       }, 500);
     </script>
   </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trinket Wrapper</title>
+  <style>
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="trinket" src="https://trinket.io/embed/python3/a5bd54189b" sandbox="allow-scripts allow-same-origin"></iframe>
+  <script>
+    // Blur iframe after it's loaded to prevent it from taking focus
+    const iframe = document.getElementById("trinket");
+    iframe.onload = () => {
+      setTimeout(() => {
+        iframe.blur();
+        window.scrollTo(0, 0); // Scroll back to top just in case
+      }, 500);
+    };
+  </script>
+</body>
 </html>
